@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+<script>
+    $(document).ready(function () {
+        $("#done").click(function () {
+            $("#messageshow").hide();
+            var region_id = $('#region_id').val();
+            var lokaz_id = $('#lokaz_id').val();
+            var zona_id = $('#zona_id').val();
+            var data = $('#data').val();
+            var number = $('#number').val();
+            var message = $('#message').val();
+            var email = $('#email').val();
+            var fail = "";
+            if (fail != "") {
+                $('#messageshow').html(fail + "<div class= 'clear'><br></div>");
+                $('#messageshow').show();
+                return false;
+            }
+            $.ajax({
+                url: 'php/ajax.php',
+                type: 'POST',
+                cache: false,
+                data: { 'region_id': region_id, 'lokaz_id': lokaz_id, 'zona_id': zona_id, 'data': data, 'number': number, 'message': message, 'email': email },
+                dataType: 'html',
+                success: function (data) {
+                    $('#messageshow').html(data + "<div class='clear'><br></div>");
+                    $('#messageshow').show();
+                }
+            });
+        });
+    });
+</script>
+
+<body>
+    <header>
+        <div class="container" id="first-page">
+            <img class="logo" src="images/for logo/0.jpg">
+            <h1>Фокус</h1>
+            <p>Телефон 8(800)333-30-30</p>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="search.html">Поиск локаций</a></li>
+                    <li><a href="seat.html">Выбор зон локации</a></li>
+                    <li class="current"><a href="booking.html">Бронирование</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="end">
+        <section class="brzakaz">
+            <h1>Данные о заказе</h1>
+            <form action="">
+                <div class="zakaz">
+                    Регион: <select id="region_id" class="StyleSelectBox">
+                        <option value="0">- выберите регион -</option>
+                        <option value="1">Алтайский край</option>
+                        <option value="2">Красноярский край</option>
+                    </select>
+                </div>
+                <div class="zakaz">
+                    <br>Локация:
+                    <select id="lokaz_id" disabled>
+                        <option value="0">- Выберите локацию -</option>
+                    </select>
+                </div>
+                <div class="zakaz">
+                    <br>Зона локации:
+                    <select id="zona_id" disabled>
+                        <option value="0">- Выберите зону локации-</option>
+                    </select>
+                </div>
+                <div class="zakaz">
+                    <script>
+                        var all_lokaz = [];
+                        var all_zona = [[], [], []];
+
+                        all_lokaz[0] = ["Туристическая база Oзеро Красилово, Косихинский район, с. Озеро-Красилово, ул. Пушкина д.1", "Спа-отель Мечта, г. Барнаул, Правобережный тракт 45"];
+                        all_lokaz[1] = ["Парк-отель Чайка, Ачинский район, с. Ключи, Пионерская долина, 5"];
+
+                        all_zona[0][0] = ["Шатер", "Летний домик", "Беседка", "Профессиональная фотостудия", "Пирс у озера"];
+                        all_zona[0][1] = ["Пирс у реки", "Яхт-клуб", "Беседка", "Ресторан", "Профессиональная фотостудия"];
+
+                        all_zona[1][0] = ["Шатер", "Летний домик", "Беседка", "Бассейн с зоной отдыха"];
+
+                        region_id.onchange = function () {
+                            lokaz_id.disabled = false;
+                            lokaz_id.innerHTML = "<option value='0'>- Выберите локацию -</option>";
+                            mylokaz = this.value - 1;
+                            if (mylokaz != -1) {
+                                for (var i = 0; i < all_lokaz[mylokaz].length; i++) {
+                                    lokaz_id.innerHTML += '<option value="' + (i + 1) + '">' + all_lokaz[mylokaz][i] + '</option>';
+                                }
+                            } else {
+                                lokaz_id.disabled = true;
+                                zona_id.disabled = true;
+                            }
+                        }
+
+                        lokaz_id.onchange = function () {
+                            zona_id.disabled = false;
+                            zona_id.innerHTML = "<option value='0'>- Выберите зону локации -</option>";
+                            var myzona = this.value - 1;
+                            if (myzona != -1) {
+                                for (var i = 0; i < all_zona[mylokaz][myzona].length; i++) {
+                                    zona_id.innerHTML += '<option value="' + (i + 1) + '">' + all_zona[mylokaz][myzona][i] + '</option>';
+                                }
+                            } else {
+                                zona_id.disabled = true;
+                            }
+                        }
+                    </script>
+                </div>
+                <br>
+                <div class="zakaz">
+                    Дата и время <input type="datetime-local" id="data" value="2022-11-10T18:58">
+                </div>
+                <br>
+                <div class="zakaz">
+                    Количество участников <input type="number" id="number" name="firstname"
+                        placeholder="Введите количество">
+                </div>
+                <div class="zakaz">
+
+                    Стоимость:
+
+                </div>
+
+                <div class="zakaz">
+                    <h4 style="margin: 15px;">Выбор дополнительных услуг: </h4>
+                    <input type="checkbox" name="type1">Услуги фотографа<br>
+                    <input type="checkbox" name="type1">Услуги использования реквизита<br>
+                    <input type="checkbox" name="type1">Услуги моментальной печати фотографий<br>
+                    <input type="checkbox" name="type1">Услуги такси<br>
+                    Комментарий к заказу <br><textarea id="message" name="text" cols="30" rows="10"
+                   placeholder="Введите сюда сообщение"></textarea>
+                    <button type="reset">Сброс</button><br>
+                    <input type="email" id="email" name="email" placeholder="Введите ваш Email">
+
+                    Итоговая стоимость: <br><br>
+
+                    <div id="messageshow"></div>
+                    <input type="button" name="done" id="done" value="отправить ЗАКАЗ">
+                </div>
+            </form>
+        </section>
+    </div>
+</body>
+
+<footer class="panel">
+    <img class="logo" src="images/for logo/0.jpg" alt="logo">
+    <p>Телефон 8(800)333-30-30</p>
+    <div>
+        <nav>
+            <ul>
+
+                <li><a href="http://xxxxxx-m1.wsr.ru">Home</a></li>
+                <li><a href="http://xxxxxx-m1.wsr.ru/login">Login</a></li>
+                <li><a href="http://xxxxxx-m1.wsr.ru/signup">Sign up</a></li>
+                <li><a href="http://xxxxxx-m1.wsr.ru/contact">Contact</a></li>
+                <li><a href="http://xxxxxx-m1.wsr.ru/news">News</a></li>
+                <li><a href="http://xxxxxx-m1.wsr.ru/return">Return</a></li>
+                <li><a href="http://xxxxxx-m1.wsr.ru/feedback">Feedback</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+</html>

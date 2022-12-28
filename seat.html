@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('ol').click(function () {
+                var number = $(this).index();
+                $('h2').slideUp(400).eq(number).slideDown(400);
+                $('section').slideUp(400).eq(number).slideDown(400);
+                $('ol').removeClass('inactive').addClass('active');
+                $('ol').not(this).removeClass('active').addClass('inactive');
+            });
+            $('h2').not(':first').hide();
+            $('section').not(':first').hide();
+        })
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container" id="first-page">
+            <img class="logo" src="images/for logo/0.jpg">
+            <h1>Фокус</h1>
+            <p>Телефон 8(800)333-30-30</p>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="search.html">Поиск локаций</a></li>
+                    <li class="current"><a href="seat.html">Выбор зон локации</a></li>
+                    <li><a href="booking.html">Бронирование</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="navbar">
+        <ul>
+            <div>
+                <ol class="active">
+                    <a href="#" title="Туристическая база Озеро Красилово">Туристическая база "Озеро Красилово" <span class="notification"></span></a>
+                </ol>
+                <ol class="inactive"><a href="#" title=" Спа-отель Мечта"> Спа-отель "Мечта"</a></ol>
+                <ol class="inactive"><a href="#" title="Парк-отель Чайка">Парк-отель "Чайка"</a></ol>
+            </div>
+        </ul>
+    </div>
+    <div class="seat">
+        <h2>Выбор зон в локации Туристическая база "Озеро Красилово", Косихинский район, с. Озеро-Красилово, ул. Пушкина
+            д.1</h2>
+        <section id="local1">
+            <div>
+                <h3>1. Шатер </h3>
+                <p>Дата и время сьемки: 31.12.2022 10:00</p>
+                <div>
+                    <p>Вместимость - до 5 чел. Стоимость 500 р/час.</p>
+                    <img class="local" src="images/location/18.jpg"><br>
+                    <button type="submit"><a href="booking.html">Выбрать зону локации</a></button>
+                </div>
+            </div>
+            <div>
+                <h3>2. Летний домик </h3>
+                <p>Дата и время сьемки: 31.12.2022 10:00</p>
+                <div>
+                    <p>Вместимость - до 10 чел. Стоимость 300 р/час</p>
+                    <img class="local" src="images/location/10.jpg"><br>
+                    <button type="submit"><a href="booking.html">Выбрать зону локации</a></button>
+                </div>
+            </div>
+            <div>
+                <h3>3. Беседка </h3>
+                <p>Дата и время сьемки: 31.12.2022 10:00</p>
+                <div>
+                    <p>Вместимость - до 5 чел. Стоимость 200 р/час</p>
+                    <img class="local" src="images/location/3.jpg"><br>
+                    <button type="submit"><a href="booking.html">Выбрать зону локации</a></button>
+                </div>
+            </div>
+            <div>
+                <h3>4. Профессиональная фотостудия</h3>
+                <p>Дата и время сьемки: 31.12.2022 10:00</p>
+                <div>
+                    <p>Вместимость - до 10 чел. Стоимость 300 р/час</p>
+                    <img class="local" src="images/location/1.jpg"><br>
+                    <button type="submit"><a href="booking.html">Выбрать зону локации</a></button>
+                </div>
+                <h3>5. Пирс у озера</h3>
+                <p>Дата и время сьемки: 31.12.2022 10:00</p>
+                <div>
+                    <p>Вместимость - до 15 чел. Стоимость 200 р/час</p>
+                    <img class="local" src="images/location/14.jpg"><br>
+                    <button type="submit"><a href="booking.html">Выбрать зону локации</a></button>
+                </div>
+            </div>
+        </section>
+        <h2>Выбор зон в локации Спа-отель "Мечта", г. Барнаул, Правобережный тракт 45</h2>
+        <section id="local2">
+            <div>
+                <h3>1. Пирс у реки</h3>
+                <p>Дата и время сьемки: 31.12.2022 10:00</p>
+                <div>
+                    <p>Вместимость - до 15 чел. Стоимость 200 р/час.</p>
+                    <img class="local" src="images/location/14.jpg"><br>
+                    <button type="submit"><a href="booking.html">Выбрать зону локации</a></button>
+                </div>
+            </div>
+            <div>
+                <h3>2. Яхт-клуб</h3>
+                <p>Дата и время сьемки: 31.12.2022 10:00</p>
+                <div>
+                    <p>Вместимость - до 5 чел. Стоимость 500 р/час</p>
+                    <img class="local" src="images/location/5.jpg"><br>
+                    <button type="submit"><a href="booking.html">Выбрать зону локации</a></button>
+                </div>
+            </div>
+            <div>
+                <h3>3. Беседка</h3>
+                <p>Дата и время сьемки: 31.12.2022 10:00</p>
+                <div>
+                    <p>Вместимость - до 5 чел. Стоимость 200 р/час</p>
+                    <img class="local" src="images/location/3.jpg"><br>
+                    <button type="submit"><a href="booking.html">Выбрать зону локации</a></button>
+                </div>
+            </div>
+            <div>
+                <h3>3. Ресторан</h3>
+                <p>Дата и время сьемки: 31.12.2022 10:00</p>
+                <div>
+                    <p>Вместимость - до 5 чел. Стоимость 500 р/час</p>
+                    <img class="local" src="images/location/9.jpg"><br>
+                    <button type="submit"><a href="booking.html">Выбрать зону локации</a></button>
+                </div>
+                <h3>4. Профессиональная фотостудия</h3>
+                <p>Дата и время сьемки: 31.12.2022 10:00</p>
+                <div>
+                    <p>Вместимость - до 10 чел. Стоимость 300 р/час</p>
+                    <img class="local" src="images/location/13.jpg"><br>
+                    <button type="submit"><a href="booking.html">Выбрать зону локации</a></button>
+                </div>
+            </div>
+        </section>
+        <h2>Выбор зон в локации Парк-отель "Чайка", Ачинский район, с. Ключи, Пионерская долина, 5</h2>
+        <section id="local3">
+            <div>
+                <h3>1. Шатер </h3>
+                <p>Дата и время сьемки: 31.12.2022 10:00</p>
+                <div>
+                    <p>Вместимость - до 10 чел. Стоимость 700 р/час.</p>
+                    <img class="local" src="images/location/18.jpg"><br>
+                    <button type="submit"><a href="booking.html">Выбрать зону локации</a></button>
+                </div>
+            </div>
+            <div>
+                <h3>2. Летний домик </h3>
+                <p>Дата и время сьемки: 31.12.2022 10:00</p>
+                <div>
+                    <p>Вместимость - до 5 чел. Стоимость 400 р/час</p>
+                    <img class="local" src="images/location/10.jpg"><br>
+                    <button type="submit"><a href="booking.html">Выбрать зону локации</a></button>
+                </div>
+            </div>
+            <div>
+                <h3>3. Беседка </h3>
+                <p>Дата и время сьемки: 31.12.2022 10:00</p>
+                <div>
+                    <p>Вместимость - до 5 чел. Стоимость 200 р/час</p>
+                    <img class="local" src="images/location/3.jpg"><br>
+                    <button type="submit"><a href="booking.html">Выбрать зону локации</a></button>
+                </div>
+            </div>
+            <div>
+                <h3>3. Бассейн с зоной отдыха </h3>
+                <p>Дата и время сьемки: 31.12.2022 10:00</p>
+                <div>
+                    <p>Вместимость - до 15 чел. Стоимость 2000 р/час</p>
+                    <img class="local" src="images/location/14.jpg"><br>
+                    <button type="submit"><a href="booking.html">Выбрать зону локации</a></button>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<footer class="panel">
+    <img class="logo" src="images/for logo/0.jpg" alt="logo">
+    <p>Телефон 8(800)333-30-30</p>
+    <div>
+        <nav>
+            <ul>
+
+                <li><a href="http://xxxxxx-m1.wsr.ru">Home</a></li>
+                <li><a href="http://xxxxxx-m1.wsr.ru/login">Login</a></li>
+                <li><a href="http://xxxxxx-m1.wsr.ru/signup">Sign up</a></li>
+                <li><a href="http://xxxxxx-m1.wsr.ru/contact">Contact</a></li>
+                <li><a href="http://xxxxxx-m1.wsr.ru/news">News</a></li>
+                <li><a href="http://xxxxxx-m1.wsr.ru/return">Return</a></li>
+                <li><a href="http://xxxxxx-m1.wsr.ru/feedback">Feedback</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+</html>

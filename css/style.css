@@ -1,0 +1,378 @@
+body {
+    margin: 0;
+    margin-left: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.logo {
+    height: 100px;
+    width: 150px;
+    border: 2px solid rgb(56, 4, 43);
+    display: inline-block;
+    margin-left: 3em;
+    margin-top: 3em;
+    vertical-align: middle;
+}
+
+header {
+    height: auto;
+    padding-top: 30px;
+    min-height: 70px;
+    overflow: hidden;
+    display: inline;
+}
+
+#first-page {
+    background: url("../images/shapka.jpg");
+    background-size: 100%;
+}
+
+.container h1 {
+    font-size: 80px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-style: italic;
+    color: rgb(56, 4, 43);
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 1em;
+}
+
+.container p {
+    margin-right: 30px;
+    color: #cfacce;
+    float: right;
+}
+
+header a {
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+}
+
+header a:hover {
+    color: rgb(226, 168, 209);
+}
+
+header li {
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+.container nav {
+    margin: 20px;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+
+.current a {
+    color: rgb(226, 168, 209);
+    font-weight: bold;
+}
+
+#otziv img {
+    max-width: 150px;
+    min-height: 30%;
+}
+
+#otziv {
+    margin: 10px;
+    display: flex;
+    align-items: baseline;
+}
+
+.box {
+    width: 100%;
+    text-align: center;
+}
+
+.br {
+    max-width: 150px;
+    min-height: 30%;
+}
+
+.bron {
+    display: flex;
+    margin: 0;
+}
+
+.bron h3 {
+    font-size: 40px;
+}
+
+section#akcii .item {
+    font-size: 50px;
+    cursor: default;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background: #fff;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transform: translateX(-100%);
+    transition-duration: .4s;
+    opacity: 1;
+}
+
+section#akcii .item p {
+    font-size: 15px;
+    text-align: justify;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+section#akcii .item:hover {
+    color: rgb(56, 4, 43);
+}
+
+section#akcii .item img {
+    height: 85%;
+    margin: 5px;
+    padding: 5px;
+}
+
+section#akcii input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    top: 0;
+}
+
+section#akcii input[type="radio"]:checked+.akcii-label {
+    border: solid 1px rgb(56, 4, 43);
+    background-color: rgb(56, 4, 43);
+}
+
+section#akcii input[type="radio"]:checked~.item {
+    transform: translateX(100%);
+}
+
+section#akcii input[type="radio"]:checked+.akcii-label+.item {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+section#akcii .akcii-label {
+    display: inline-block;
+    cursor: pointer;
+    margin: 6px !important;
+    transition: .5s ease-in-out;
+    border: 2px solid rgb(56, 4, 43);
+    content: " ";
+    height: 12px;
+    left: -4px;
+    top: -4px;
+    width: 12px;
+    border-radius: 20%;
+}
+
+section#akcii #slider {
+    overflow: hidden;
+    position: relative;
+}
+
+#slider h2 {
+    font-size: 24px;
+}
+
+#slider {
+    width: 100%;
+    height: 400px;
+}
+
+footer {
+    background: url("../images/footer.jpg");
+    background-size: 100%;
+    margin-top: 30px;
+}
+
+footer li {
+    display: inline;
+    float: unset;
+}
+
+footer p {
+    margin-right: 30px;
+    color: rgb(56, 4, 43);
+    float: right;
+}
+
+#navbar {
+    margin: 20px 0 0 0;
+    width: 1000px;
+    font-weight: bold;
+}
+
+ul ol {
+    display: inline-block;
+}
+
+ul ol a {
+    float: left;
+    position: relative;
+    display: block;
+    width: 250px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.active a {
+    padding: 28px 0 20px 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(#cfacce), to(#cfacce));
+    background: -moz-linear-gradient(top center, #cfacce, #cfacce);
+    border: solid 1px rgb(56, 4, 43);
+    text-shadow: 0 1px 1px black;
+    -webkit-border-radius: 10px 10px 0 0;
+    -webkit-background-clip: padding-box;
+    -webkit-box-shadow: inset 0 0 1px rgb(56, 4, 43);
+    -moz-border-radius: 10px 10px 0 0;
+    -moz-background-clip: padding-box;
+    -moz-box-shadow: inset 0 0 1px rgb(56, 4, 43);
+    margin-left: 5px;
+    z-index: 2;
+    color: #fff;
+    height: 36px;
+}
+
+.active a:focus {
+    outline: none;
+}
+
+.inactive a:hover {
+    background: -webkit-gradient (linear, left bottom, left top, from(#eee), to(#ddd));
+    background: -moz-linear-gradient(top center, #ddd, #eee);
+}
+
+.inactive a {
+    padding: 28px 0 20px 0;
+    background: -webkit-gradient (linear, left top, left bottom, from(#eee), to(#ddd));
+    background: -moz-linear-gradient (top center, #ddd, #eee);
+    border: solid 1px #ccc;
+    text-shadow: 0 1px 1px white;
+    -webkit-border-radius: 10px 10px 0 0;
+    -webkit-box-shadow: inset 0 0 5px #fff;
+    -moz-border-radius: 10px 10px 0 0;
+    -moz-box-shadow: inset 0 0 5px #fff;
+    margin-left: -5px;
+    z-index: 1;
+    color: #222;
+    height: 36px;
+}
+
+.inactive a:focus {
+    outline: none;
+}
+
+span.notification {
+    padding: 0;
+    margin-top: -6px;
+    color: #fff;
+    min-width: 15px;
+    text-align: center;
+    background: -webkit-gradient (linear, left top, left bottom, from (#2a2a2a), to (#222));
+    background: -moz-linear-gradient (top center, #2a2a2a, #222);
+    -webkit-box-shadow: inset 0 0 1px #333;
+    -moz-box-shadow: inset 0 0 1px #333;
+    text-shadow: 0 -1px 1px black;
+    -webkit-border-radius: 50px;
+    margin-left: 50px;
+}
+
+.local {
+    width: 30%;
+    height: 30%;
+}
+
+#poisk {
+    text-align: center;
+    padding: 5px;
+    margin-top: 30px;
+}
+
+#poisk form {
+    height: 200px;
+    width: 70%;
+    margin-top: 15px;
+    padding-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgb(56, 4, 43);
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    margin-left: 15%;
+    background: rgb(248, 243, 247);
+}
+
+#poisk form input,
+.brzakaz input {
+    padding: 8px;
+    border-radius: 10px;
+
+}
+
+#poisk form select,
+.brzakaz select {
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.seat button,
+.search button {
+    background: rgb(56, 4, 43);
+    border-radius: 10px;
+    padding: 8px;
+    margin: 10px;
+}
+
+.seat button a,
+.search button a {
+    color: rgb(248, 243, 247);
+}
+
+.nav2 li {
+    list-style-type: none;
+    border-radius: 10px;
+    background: rgb(248, 243, 247);
+    border-radius: 10px;
+    padding: 8px;
+    width: 30%;
+    box-shadow: 0 4px 16px rgb(56, 4, 43);
+
+}
+
+.brzakaz {
+    box-shadow: 0 4px 16px rgb(56, 4, 43);
+    border-radius: 10px;
+    width: 500px;
+    height: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    background: white;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+#end {
+    background: url("../images/location/19.jpg");
+    width: 100%;
+    height: 1000px;
+}
+
+.zakaz input {
+    margin: 10px;
+}
+
+.zakaz input~type1 {
+    float: left;
+}
+
+.brzakaz select {
+    width: 200px;
+}
+.clear {
+    clear: both;
+}
